@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import styles from "./Style.module.css";
+import React, { useState } from "react";
+import { Typography, Paper } from "@mui/material";
+import { style } from "@mui/system";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.root}>
+      <div className={styles.title}>
+        <Typography variant="h3">
+          DALL-E{" "}
+          <span role="img" aria-label="">
+            🖼️
+          </span>{" "}
+          IllUSTRATION
+        </Typography>
+      </div>
+
+      <div className={styles.subTitle}>
+        <Typography variant="h5">
+          Make your reading of more fun using DALL-E.
+        </Typography>
+      </div>
+
+      <div className={styles.playgroundSection}>
+        <div className={styles.settingSection}></div>
+        <div className={styles.illustration}></div>
+      </div>
+
+      <div className={styles.gallary}></div>
     </div>
   );
 }
