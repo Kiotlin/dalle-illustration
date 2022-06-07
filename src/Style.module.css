@@ -18,19 +18,99 @@
 .playgroundSection {
     display: flex;
     flex: 1;
-    width: 100%;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-    max-height: 500px;
-    max-width: 900px;
-    background-color: thistle;
+    /* height: 600px; */
+    width: 900px;
+    /* background-color: grey; */
+}
+
+.book {
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 auto;
+    height: 460px;
+    width: 100%;
+}
+
+.settingSection {
+    flex: 1;
+    background-color: blanchedalmond;
+}
+
+.illustrationSection {
+    flex: 1;
+}
+
+.illustrationWrap {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .illustration {
-    
+    border-radius: 8px;
+    /* flex: 1; */
+    width: 130%;
 }
 
 .gallary {
+    display: flex;
+    flex: 0 0 auto;
+    height: 150px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    /* background-color: brown; */
+    margin-top: 10px;
+}
 
+.searchQueryCard {
+    margin-bottom: 20px;
+}
+
+.imagesPerQueryControl {
+    margin-top: 20px;
+}
+
+.formControl {
+    margin: 20px;
+    min-width: 120px;
+}
+
+/* BackendUrlInput.js */
+.inputBackend {
+    min-width: 220px;
+}
+
+.loadingSpinner {
+    padding-top: 20px !important;
+}
+
+/* TextPromptInput.js */
+.inputPrompt {
+    margin-top: 20px;
+}
+
+/* LoadingSpinner.js */
+.spinnerRoot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loadingText {
+    padding-top: 20px;
+}
+
+/* GeneratedImageList.js */
+.generatedImg {
+    border-radius: 8px;
+    max-width: 90%;
+    max-height: 90%;
 }
