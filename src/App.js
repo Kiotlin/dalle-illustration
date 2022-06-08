@@ -1,14 +1,22 @@
 import logo from "./logo.svg";
 import "./App.css";
 import styles from "./Style.module.css";
-import React, { useState } from "react";
-import { Typography, Paper } from "@mui/material";
+import React, { useRef, useState } from "react";
+import { Typography, Paper, Grid } from "@mui/material";
 
 import { callDalleService } from "./backend_api";
 import GeneratedImageList from "./GeneratedImageList";
 import TextPromptInput from "./TextPromptInput";
 import BackendUrlInput from "./BackendUrlInput";
 import LoadingSpinner from "./LoadingSpinner";
+import {
+  Download2LocalButton,
+  ShareToTwitterButton,
+  ExportAsCodeButton,
+  SendWithMailButton,
+} from "./GeneratorButtonGroup";
+import { ThemeProvider } from "@emotion/react";
+import { createTheme } from "@mui/system";
 
 const paperStyle = {
   width: "100%",
@@ -31,6 +39,7 @@ function App() {
   const [promptText, setPromptText] = useState("");
 
   const validBackendUrl = isValidBackendEndpoint && backendUrl;
+  const canvasRef = useRef();
 
   function enterPressedCallback(pText) {
     console.log(
@@ -90,6 +99,27 @@ function App() {
       return <div></div>;
     }
 
+    const theme = createTheme({
+      typography: {
+        fontFamily: ["Nunito", "Helvetica Neue"].join(","),
+      },
+    });
+
+    const copyRightTheme = createTheme({
+      typography: {
+        fontFamily: [
+          "Brush Script MT",
+          "Brush Script Std",
+          "Lucida Calligraphy",
+          "Lucida Handwriting",
+          "Apple Chancery",
+          "Nunito",
+          "Helvetica Neue",
+        ].join(","),
+        fontSize: 20,
+      },
+    });
+
     const illust = generatedImages[imageSelectedIndex];
     const IllustObject = ({ imgData, alt }) => (
       <img
@@ -102,9 +132,16 @@ function App() {
     return (
       <div className={styles.illustrationWrap}>
         <IllustObject imgData={illust} alt={imageSelectedIndex} />
-        <Typography variant="h5" color="textSecondary" pt={2}>
-          {promptText}
-        </Typography>
+        <ThemeProvider theme={theme}>
+          <Typography variant="h4" color="textSecondary" pt={4}>
+            {promptText}
+          </Typography>
+        </ThemeProvider>
+        <ThemeProvider theme={copyRightTheme}>
+          <Typography color="textSecondary">
+            © DALL-E ILLUSTRATION
+          </Typography>
+        </ThemeProvider>
       </div>
     );
   }
@@ -147,6 +184,7 @@ function App() {
           </div>
           <div className={styles.illustrationSection}>
             <Paper
+              ref={canvasRef}
               variant="outlined"
               square
               sx={paperStyle}
@@ -164,6 +202,13 @@ function App() {
             Query execution time: {queryTime} sec
           </Typography>
         )}
+
+        <Grid container className={styles.buttonWrap} py={2} spacing={5}>
+          <Download2LocalButton capturedComponent={canvasRef} />
+          <ExportAsCodeButton />
+          <SendWithMailButton />
+          <ShareToTwitterButton />
+        </Grid>
       </div>
     </div>
   );
