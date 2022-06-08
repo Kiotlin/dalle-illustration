@@ -14,6 +14,11 @@ const imgListItemStyle = {
   justifyContent: "center",
 };
 
+const iconButtonStyle = {
+  borderRadius: "10px",
+  padding: 0,
+};
+
 const GeneratedImageList = ({ generatedImages, imageSelectedHandler }) => {
   
   function handleButtomClick(event) {
@@ -21,7 +26,7 @@ const GeneratedImageList = ({ generatedImages, imageSelectedHandler }) => {
   }
 
   const ImageObject = ({ imgData, alt }) => (
-    <IconButton onClick={handleButtomClick}>
+    <IconButton onClick={handleButtomClick} sx={iconButtonStyle}>
       <img
         src={`data:image/png;base64,${imgData}`}
         className={styles.generatedImg}
@@ -29,6 +34,7 @@ const GeneratedImageList = ({ generatedImages, imageSelectedHandler }) => {
       />
     </IconButton>
   );
+  
   return (
     <ImageList sx={imgListStyle} cols={1}>
       {generatedImages.map((generatedImg, index) => {
