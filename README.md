@@ -4,5 +4,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## TO DO
 
-- [] Use GPT-3 to translate difficult text into shorter text, keep editable.
-- [] Use GPT-3 to translate `promptText` into other language.
+- [ ] Use GPT-3 to translate difficult text into shorter text, keep editable.
+- [ ] Use GPT-3 to translate `promptText` into other language.
