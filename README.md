@@ -1,4 +1,4 @@
-![DALL-E POLAROID](/public/preview.png)
+![DALL-E POLAROID](/public/preview.png "DALL-E POLAROID")
 
 # DALL-E POLAROID
 
