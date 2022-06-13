@@ -138,8 +138,8 @@ function App() {
           </Typography>
         </ThemeProvider>
         <ThemeProvider theme={copyRightTheme}>
-          <Typography color="textSecondary">
-            © DALL-E ILLUSTRATION
+          <Typography color="textSecondary" pt={1}>
+            © DALL-E POLAROID
           </Typography>
         </ThemeProvider>
       </div>
@@ -154,13 +154,13 @@ function App() {
           <span role="img" aria-label="">
             🖼️
           </span>{" "}
-          IllUSTRATION
+          POLAROID
         </Typography>
       </div>
 
       <div className={styles.subTitle}>
         <Typography variant="h5">
-          Make your reading of more fun using DALL-E.
+          Make your unique polaroid style photo using DALL-E.
         </Typography>
       </div>
 

@@ -1,8 +1,12 @@
-# DALL-E ILLUSTRATION
+![DALL-E POLAROID](/public/preview.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# DALL-E POLAROID
+
+Make your unique polaroid style photo using DALL-E.
 
 ## TO DO
 
-- [] Use GPT-3 to translate difficult text into shorter text, keep editable.
-- [] Use GPT-3 to translate `promptText` into other language.
+- [ ] Implement more layout template and font.
+- [ ] Implement a function for putting a filter on a photo.
+- [ ] Use GPT-3 to translate long text into shorter text, keep editable.
+- [ ] Use GPT-3 to translate `promptText` into other language.
