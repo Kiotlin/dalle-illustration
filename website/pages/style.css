@@ -105,3 +105,11 @@ a {
     color: #fff;
     box-shadow: 0 0 0 #333, 0 0 100px #444 inset;
 }
+
+.light #logo {
+    content: url("/dalle-polaroid-logo.png");
+}
+
+.dark #logo {
+    content: url("/dalle-polaroid-logo-dark.png");
+}

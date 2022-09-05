@@ -4,14 +4,13 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 
 const Logo = () => {
-    const url = '/logo.png';
-
     return (
         <Image
-            src={url}
+            id="logo"
+            src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
             alt="Logo"
-            height={36}
-            width={36}
+            height={50}
+            width={50}
         />
     );
 }
