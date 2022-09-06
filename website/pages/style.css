@@ -107,9 +107,13 @@ a {
 }
 
 .light #logo {
-    content: url("/dalle-polaroid-logo.png");
+    background-image: url("/dalle-polaroid-logo.svg");
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .dark #logo {
-    content: url("/dalle-polaroid-logo-dark.png");
+    background-image: url("/dalle-polaroid-logo-dark.svg");
+    background-position: center;
+    background-repeat: no-repeat;
 }
